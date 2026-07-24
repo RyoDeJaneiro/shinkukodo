@@ -63,9 +63,8 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
             will-change: opacity, visibility;
         }
-        body {
-            background-color: #F4F1ED;
         }
+
         /* Custom subtle radial gradient for a sophisticated look */
         .bg-radial {
             background: radial-gradient(circle at top right, #E6D8C3 0%, #F4F1ED 50%);
@@ -166,9 +165,8 @@
                                 <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-zunda dark:text-white" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                                 </svg>
-                                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-kinako" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4.22 4.22a1 1 0 011.415 0l.708.708a1 1 0 01-1.414 1.414l-.708-.708a1 1 0 010-1.414zM16 10a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-4.22 4.22a1 1 0 010 1.415l-.708.708a1 1 0 01-1.414-1.414l.708.708a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zm-4.22-4.22a1 1 0 01-1.415 0l-.708-.708a1 1 0 011.414-1.414l.708.708a1 1 0 010 1.414zM4 10a1 1 0 01-1 1H2a1 1 0 110-2h1a1 1 0 011 1zm4.22-4.22a1 1 0 010-1.415l.708-.708a1 1 0 011.414 1.414l-.708.708a1 1 0 01-1.414 0z"></path>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10 5a5 5 0 100 10 5 5 0 000-10zM7 10a3 3 0 116 0 3 3 0 01-6 0z"></path>
+                                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-kinako" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </button>
                         </li>
@@ -200,7 +198,7 @@
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[80vh]">
         <!-- Decorative Background -->
-        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-orange-50 via-white to-stone-100 animate-gradient-x"></div>
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-orange-50 via-white to-stone-100 dark:from-zunda dark:via-[#1A1C1A] dark:to-black animate-gradient-x transition-colors duration-1000"></div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-kinako/10 rounded-full blur-3xl -z-10"></div>
         
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative w-full">
