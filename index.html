@@ -642,15 +642,10 @@
             // Splash Screen Logic
             const splash = document.getElementById('splash-screen');
             if (splash) {
-                if (sessionStorage.getItem('splashShown')) {
-                    splash.style.display = 'none';
-                } else {
-                    sessionStorage.setItem('splashShown', 'true');
-                    setTimeout(() => {
-                        splash.style.opacity = '0';
-                        setTimeout(() => splash.remove(), 1000);
-                    }, 800);
-                }
+                setTimeout(() => {
+                    splash.style.opacity = '0';
+                    setTimeout(() => splash.remove(), 1000);
+                }, 800);
             }
 
             const observerOptions = {
