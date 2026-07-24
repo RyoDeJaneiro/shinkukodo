@@ -136,14 +136,14 @@
     </style>
 </head>
 <body class="bg-surface dark:bg-zunda dark:bg-zunda text-zunda-light dark:text-gray-300 transition-colors duration-500 font-sans antialiased overflow-x-hidden selection:bg-kinako selection:text-white">
-    <!-- SVG Filter for Dark Mode Logo -->
     <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
         <filter id="logo-dark">
-            <feColorMatrix type="matrix" values="
+            <feColorMatrix in="SourceGraphic" result="recolored" type="matrix" values="
                 0 0 0 0 1
                 0 0 0 0 1
                 0 0 0 0 1
                 -0.4 -0.4 -0.4 0 1.15" />
+            <feComposite in="recolored" in2="SourceGraphic" operator="in" />
         </filter>
     </svg>
 
