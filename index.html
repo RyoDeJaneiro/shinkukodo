@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Studio Shinku-Kodo | 真空工堂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <meta name="description" content="モダンな技術とアイデアで、新しい価値を創造するパーソナルソフトウェア開発スタジオ「真空工堂（Digital Studio Shinku-Kodo）」の公式コーポレートサイト。">
     <meta property="og:title" content="Digital Studio Shinku-Kodo | 真空工堂">
     <meta property="og:description" content="モダンな技術とアイデアで、新しい価値を創造するパーソナルソフトウェア開発スタジオ「真空工堂（Digital Studio Shinku-Kodo）」の公式コーポレートサイト。">
@@ -132,13 +135,22 @@
         .reveal-text.is-revealed {
             opacity: 1;
             transform: translateY(0);
+        }
+        /* Cat Leap Animation */
+        @keyframes leap {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(4deg); }
+        }
+        .animate-leap {
+            animation: leap 1s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-surface dark:bg-zunda dark:bg-zunda text-zunda-light dark:text-gray-300 transition-colors duration-500 font-sans antialiased overflow-x-hidden selection:bg-kinako selection:text-white">
     <!-- Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 z-[9999] bg-surface dark:bg-[#1A1C1A] flex items-center justify-center transition-opacity duration-1000">
         <div class="flex items-center">
-            <img src="running-cat-custom.gif" alt="Running Cat" class="h-16 w-auto object-contain dark:invert">
+            <img src="logo.jpg" alt="Loading" class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen dark:invert dark:contrast-200 animate-leap">
             <span class="ml-3 text-2xl font-black tracking-widest text-zunda dark:text-white leading-none">真空工堂</span>
         </div>
     </div>
