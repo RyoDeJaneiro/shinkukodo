@@ -79,6 +79,9 @@
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(26, 28, 26, 0.05);
         }
+        .header-hidden {
+            transform: translateY(-100%);
+        }
     </style>
 </head>
 <body class="bg-surface text-zunda-light font-sans antialiased overflow-x-hidden selection:bg-kinako selection:text-white">
@@ -87,7 +90,7 @@
     <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[800px] max-h-[800px] bg-kinako/10 rounded-full blur-[120px] -z-20 pointer-events-none"></div>
     <div class="fixed bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] bg-zunda/5 rounded-full blur-[120px] -z-20 pointer-events-none"></div>
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 glass-header transition-all duration-300">
+    <header id="main-header" class="fixed w-full top-0 z-50 glass-header transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
@@ -213,33 +216,43 @@
 
             <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 <!-- Project 1: GWAVR -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 fade-in-section group relative transform hover:-translate-y-2" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
-                        <img src="gwavr_official_icon.png" alt="GWAVR Icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative fade-in-section" style="transition-delay: 100ms;">
+                    <!-- Glow Effect Background -->
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-kinako-light to-kinako rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    
+                    <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 group-hover:border-kinako/30 h-full flex flex-col transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
+                            <img src="gwavr_official_icon.png" alt="GWAVR Icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h4 class="text-2xl font-bold text-zunda mb-3">GWAVR（グアバー）</h4>
+                        <p class="leading-relaxed mb-6 flex-grow">
+                            "Voice of Queers"をコンセプトに、クィアなクリエイターの声を可視化するPodcastキュレーションメディア。AIによる自動文字起こし・意味づけ技術を活用し、「あの話題について話していた回」をピンポイントで見つけ出せる新しい音声探索体験も提供しています。
+                        </p>
+                        <a href="https://www.gwavr.com" target="_blank" rel="noopener noreferrer" class="text-kinako font-medium hover:text-kinako-dark inline-flex items-center transition-colors">
+                            gwavr.com を見る
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
                     </div>
-                    <h4 class="text-2xl font-bold text-zunda mb-3">GWAVR（グアバー）</h4>
-                    <p class="leading-relaxed mb-4">
-                        "Voice of Queers"をコンセプトに、クィアなクリエイターの声を可視化するPodcastキュレーションメディア。AIによる自動文字起こし・意味づけ技術を活用し、「あの話題について話していた回」をピンポイントで見つけ出せる新しい音声探索体験も提供しています。
-                    </p>
-                    <a href="https://www.gwavr.com" target="_blank" rel="noopener noreferrer" class="text-kinako font-medium hover:text-kinako-dark inline-flex items-center transition-colors">
-                        gwavr.com を見る
-                        <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
                 </div>
 
                 <!-- Project 2: Rootna -->
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 fade-in-section group relative transform hover:-translate-y-2" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
-                        <img src="rootna_official_icon.png" alt="Rootna Icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="group relative fade-in-section" style="transition-delay: 200ms;">
+                    <!-- Glow Effect Background -->
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-kinako-light to-kinako rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+                    
+                    <div class="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 group-hover:border-kinako/30 h-full flex flex-col transform group-hover:-translate-y-2">
+                        <div class="w-16 h-16 bg-stone-100 rounded-2xl flex items-center justify-center mb-6 overflow-hidden shadow-sm group-hover:shadow-md transition-all duration-300">
+                            <img src="rootna_official_icon.png" alt="Rootna Icon" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <h4 class="text-2xl font-bold text-zunda mb-3">Rootna</h4>
+                        <p class="leading-relaxed mb-6 flex-grow">
+                            アラビア語特有の「語根（Root）」システムに着目した、AI駆動型の語彙学習・探索Webアプリケーション。単語から語根を特定し、派生語のネットワークを効率的に学べる機能を最新のAI（Gemini）とモダンインフラで構築・運用しています。
+                        </p>
+                        <a href="https://rootna.net" target="_blank" rel="noopener noreferrer" class="text-kinako font-medium hover:text-kinako-dark inline-flex items-center transition-colors">
+                            rootna.net を見る
+                            <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
                     </div>
-                    <h4 class="text-2xl font-bold text-zunda mb-3">Rootna</h4>
-                    <p class="leading-relaxed mb-4">
-                        アラビア語特有の「語根（Root）」システムに着目した、AI駆動型の語彙学習・探索Webアプリケーション。単語から語根を特定し、派生語のネットワークを効率的に学べる機能を最新のAI（Gemini）とモダンインフラで構築・運用しています。
-                    </p>
-                    <a href="https://rootna.net" target="_blank" rel="noopener noreferrer" class="text-kinako font-medium hover:text-kinako-dark inline-flex items-center transition-colors">
-                        rootna.net を見る
-                        <svg class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
                 </div>
             </div>
         </div>
@@ -319,11 +332,54 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-sm text-gray-400 font-medium">
-                &copy; 2026 Shinku-Kodo. All rights reserved.
-            </p>
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-12">
+                <!-- Branding & Statement -->
+                <div class="md:col-span-5 lg:col-span-4">
+                    <a href="#" class="flex items-center mb-6 group inline-flex">
+                        <img src="logo.jpg" alt="Shinku-Kodo Logo" class="h-10 w-auto object-contain mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="flex flex-col ml-3 justify-center">
+                            <span class="text-lg font-black tracking-widest text-zunda leading-none mb-1">真空工堂</span>
+                            <span class="text-[0.55rem] font-bold tracking-[0.2em] text-kinako uppercase leading-none">Shinku-Kodo</span>
+                        </div>
+                    </a>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        あふれる初期衝動とモダンなテクノロジーで<br>
+                        心躍るプロダクトを
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="md:col-span-7 lg:col-span-8 flex flex-col sm:flex-row justify-between md:justify-end md:gap-24">
+                    <div class="mb-8 sm:mb-0">
+                        <h4 class="text-sm font-bold text-zunda mb-4 tracking-wider">PAGES</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#about" class="text-sm text-gray-500 hover:text-kinako transition-colors">About Us</a></li>
+                            <li><a href="#business" class="text-sm text-gray-500 hover:text-kinako transition-colors">Business</a></li>
+                            <li><a href="#studio" class="text-sm text-gray-500 hover:text-kinako transition-colors">Studio Info</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-zunda mb-4 tracking-wider">CONNECT</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#contact" class="text-sm text-gray-500 hover:text-kinako transition-colors">Contact Form</a></li>
+                            <li><a href="https://github.com/RyoDeJaneiro" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-500 hover:text-kinako transition-colors">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-400 font-medium">
+                    &copy; 2026 Digital Studio Shinku-Kodo. All rights reserved.
+                </p>
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full bg-surface border border-gray-200 flex items-center justify-center text-gray-400 hover:text-kinako hover:border-kinako transition-colors focus:outline-none" aria-label="Back to top">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                    </svg>
+                </button>
+            </div>
         </div>
     </footer>
 
@@ -350,6 +406,26 @@
                 observer.observe(section);
             });
             
+            // Smart Header (Hide on scroll down, show on scroll up)
+            let lastScroll = 0;
+            const header = document.getElementById('main-header');
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll <= 0) {
+                    header.classList.remove('header-hidden');
+                    return;
+                }
+                if (currentScroll > lastScroll && !header.classList.contains('header-hidden')) {
+                    // Scroll Down
+                    header.classList.add('header-hidden');
+                } else if (currentScroll < lastScroll && header.classList.contains('header-hidden')) {
+                    // Scroll Up
+                    header.classList.remove('header-hidden');
+                }
+                lastScroll = currentScroll;
+            });
+
             // Mobile Menu Toggle
             const menuBtn = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
