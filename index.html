@@ -133,13 +133,17 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Cat Leap Animation */
-        @keyframes leap {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(4deg); }
+        /* Cat Dash Animation */
+        @keyframes dash {
+            0% { transform: translateY(0) scale(1, 1) skewX(-10deg); }
+            25% { transform: translateY(-12px) scale(1.05, 0.9) skewX(-18deg); }
+            50% { transform: translateY(-4px) scale(0.95, 1.05) skewX(-5deg); }
+            75% { transform: translateY(-15px) scale(1.02, 0.92) skewX(-15deg); }
+            100% { transform: translateY(0) scale(1, 1) skewX(-10deg); }
         }
-        .animate-leap {
-            animation: leap 1s ease-in-out infinite;
+        .animate-dash {
+            animation: dash 0.45s ease-in-out infinite;
+            transform-origin: bottom center;
         }
     </style>
 </head>
@@ -147,7 +151,7 @@
     <!-- Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 z-[9999] bg-surface dark:bg-[#1A1C1A] flex items-center justify-center transition-opacity duration-1000">
         <div class="flex items-center">
-            <img src="logo.jpg" alt="Loading" class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen dark:invert dark:contrast-200 animate-leap">
+            <img src="logo.jpg" alt="Loading" class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen dark:invert dark:contrast-200 animate-dash">
             <span class="ml-3 text-2xl font-black tracking-widest text-zunda dark:text-white leading-none">真空工堂</span>
         </div>
     </div>
