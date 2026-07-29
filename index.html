@@ -879,7 +879,14 @@
         });
 
         // Initialize language
-        const savedLang = localStorage.getItem('preferred-lang') || 'ja';
+        const getBrowserLanguage = () => {
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            if (browserLang.startsWith('ja')) return 'ja';
+            if (browserLang.startsWith('zh')) return 'zh';
+            if (browserLang.startsWith('ar')) return 'ar';
+            return 'en'; // Default to English for unsupported languages
+        };
+        const savedLang = localStorage.getItem('preferred-lang') || getBrowserLanguage();
         updateLanguage(savedLang);
     </script>
 </body>
